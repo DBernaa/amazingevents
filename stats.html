@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazing Events</title>
+    <link rel="shortcut icon" href="./assets/img/favicon-96x96.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl ">
+            <div class=" container-fluid d-flex justify-content-between ">
+                <div class="col-7">
+                    <img class="logo" src="./assets/img/Logo-Amazing-Events.png" alt="logo">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse col navegador" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active nava" aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link active nava" href="./upcoming.html">Upcoming Events</a>
+                        <a class="nav-link active nava" href="./past.html">Past Events</a>
+                        <a class="nav-link active nava" href="./contact.html">Contact</a>
+                        <a class="nav-link active nava" href="#">Stats</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="d-flex justify-content-between p-4 text-bg-dark" >           
+            <a href="./contact.html"><img src="./assets/img/leftarrow.jpg" alt="flecha1"></a>
+            <h1 class="text-center">Stats</h1>
+            <a href="./index.html"><img src="./assets/img/rightarrow.jpg" alt="flecha2"></a>
+        </div>
+    </header>
+
+    <main id="app" class="pt-5">
+        <table class="table container">
+            <thead>
+                <tr>
+                    <th class="bg-light" colspan="3">Events Statistics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-5 ">Events with the highest percentage of attendance</td>
+                    <td class="col-5">Events with the lowest percentage of attendance</td>
+                    <td class="col-2 chico">Event with larger capacity</td>
+                </tr>
+                <tr>
+                    <td>{{eventoMayorPorcentaje.name}}</td>
+                    <td>{{eventoMenorPorcentaje.name}}</td>
+                    <td>{{eventoMasCapacidad.name}}</td>
+                </tr>            
+                <tr>
+                    <th class="bg-light" colspan="3">Upcoming Events statistics by category</th>
+                </tr>              
+                    <tr>
+                        <td class="col-5">Categories</td>
+                        <td class="col-5">Revenues</td>
+                        <td class="col-2 chico">Percentage of attendance</td>
+                    </tr>
+                    <tr v-for="event in tableUp">
+                        <td>{{event[0]}}</td>
+                        <td>${{event[1]}}</td>
+                        <td>{{event[2]}}%</td>
+                    </tr>               
+                <tr>
+                    <th class="bg-light" colspan="3">Past Events statistics by category</th>
+                </tr>           
+                <tr>
+                    <td class="col-5">Categories</td>
+                    <td class="col-5">Revenues</td>
+                    <td class="col-2 chico">Percentage of attendance</td>
+                </tr>
+                <tr v-for="event in tableUp">
+                    <td>{{event[0]}}</td>
+                    <td>${{event[1]}}</td>
+                    <td>{{event[2]}}%</td>
+                </tr>
+            </tbody>           
+        </table>
+    </main>
+    
+    <footer class="container-fluid">
+        <div class="row d-flex justify-content-between">
+            <div class="col-6">
+                <a target="_blank" href="https://www.instagram.com/"><img class="minilogo mt-2"
+                        src="https://cdn.discordapp.com/attachments/902380029990805527/985257078224465950/instagram.png"
+                        alt="instagram"></a>
+                <a target="_blank" href="https://es-la.facebook.com/"><img class="minilogo mt-2"
+                        src="https://cdn.discordapp.com/attachments/902380029990805527/985257060025393253/facebook.png"
+                        alt="facebook"></a>
+                <a target="_blank" href="https://web.whatsapp.com/"><img class="minilogo mt-2"
+                        src="https://cdn.discordapp.com/attachments/902380029990805527/985257041478172733/whatsapp.png"
+                        alt="whatsapp"></a>
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-row-reverse">
+                    <h3>Cohort</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

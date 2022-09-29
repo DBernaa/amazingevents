@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazing Events Details </title>
+    <link rel="shortcut icon" href="./assets/img/favicon-96x96.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl ">
+            <div class=" container-fluid d-flex justify-content-between ">
+                <div class="col-7">
+                    <img class="logo" src="./assets/img/Logo-Amazing-Events.png" alt="logo">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse col navegador" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active nava" aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link active nava" href="./upcoming.html">Upcoming Events</a>
+                        <a class="nav-link active nava" href="./past.html">Past Events</a>
+                        <a class="nav-link active nava" href="./contact.html">Contact</a>
+                        <a class="nav-link active nava" href="./stats.html">Stats</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="text-bg-dark">
+            <h1 class="text-center p-4">Details</h1>
+        </div>
+    </header>
+
+    <main id="app" class="container-fluid">
+        <div id="details" class="caja d-flex  justify-content-center">
+        <div class="detallescard card text-bg-dark">
+            <div class="row g-0">
+                <div class="col-md-8 d-flex align-items-center justify-content-center">
+                    <img class="imageDetails" :src='idDetails.image'>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                    <div class="card-body text-center">
+                    <h2 class="card-title">{{idDetails.name}}</h2>
+                                <p class="card-text">Date:{{idDetails.date}}</p>
+                                <p class="card-text">Description: {{idDetails.description}}</p>
+                                <p class="card-text">Category: {{idDetails.category}}</p>
+                                <p class="card-text">Place: {{idDetails.place}}</p>
+                                <p class="card-text">Capacity: {{idDetails.capacity}}</p>
+                                <p class="card-text">Assistance: {{idDetails.assistance}}</p>
+                                <p class="card-text">Price: $ {{idDetails.price}}</p>                           
+                        </div>
+                    </div>
+            </div>
+            </div>   
+        </div>
+    </main>
+
+        <footer class="container-fluid">
+            <div class="row d-flex justify-content-between">
+                <div class="col-6">
+                    <a target="_blank" href="https://www.instagram.com/"><img class="minilogo mt-2"
+                            src="https://cdn.discordapp.com/attachments/902380029990805527/985257078224465950/instagram.png"
+                            alt="instagram"></a>
+                    <a target="_blank" href="https://es-la.facebook.com/"><img class="minilogo mt-2"
+                            src="https://cdn.discordapp.com/attachments/902380029990805527/985257060025393253/facebook.png"
+                            alt="facebook"></a>
+                    <a target="_blank" href="https://web.whatsapp.com/"><img class="minilogo mt-2"
+                            src="https://cdn.discordapp.com/attachments/902380029990805527/985257041478172733/whatsapp.png"
+                            alt="whatsapp"></a>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex flex-row-reverse">
+                        <h3>Cohort</h3>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="./js/main.js"></script>
+    </body>
+
+</html>

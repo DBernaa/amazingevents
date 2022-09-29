@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazing Events</title>
+    <link rel="shortcut icon" href="./assets/img/favicon-96x96.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl ">
+            <div class=" container-fluid d-flex justify-content-between ">
+                <div class="col-7">
+                    <img class="logo" src="./assets/img/Logo-Amazing-Events.png" alt="logo">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse col navegador" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active nava" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active nava" href="./upcoming.html">Upcoming Events</a>
+                        <a class="nav-link active nava" href="./past.html">Past Events</a>
+                        <a class="nav-link active nava" href="./contact.html">Contact</a>
+                        <a class="nav-link active nava" href="./stats.html">Stats</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="home" class="d-flex justify-content-between p-4 " >           
+            <a href="./stats.html"><img src="./assets/img/leftarrow.jpg" alt="flecha1"></a>
+            <h1 class="text-white">Home</h1>
+            <a href="./upcoming.html"><img src="./assets/img/rightarrow.jpg" alt="flecha2"></a>
+        </div>
+    </header>
+
+    <main id="app">
+        <div class="container">
+                <div class="row pt-5">
+                    <div class="d-flex align-items-start justify-content-around col-xl-8 boxes" >
+                        <div v-for="categoryCheck in category">
+                            <label :for="categoryCheck">{{categoryCheck}}</label> 
+                            <input type="checkbox" :id="categoryCheck" name="categoryCheck" :value="categoryCheck" v-model= "selectCategory">
+                            {{selectCheck}}
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 pt-5" >
+                        <input class="barradebusqueda"  type="search" v-model="input"  placeholder="Search" aria-label="Search">                                           
+                    </div>
+                </div> 
+        </div>
+        
+
+        <div class="container d-flex flex-wrap justify-content-center">
+            <div v-for="evento in eventosFiltrados" class="card cartas text-white categoria">           
+            <div  class="row mt-5 d-flex justify-content-center">              
+                <img :src="evento.image" class="card-img-top" alt="...">
+                <div class="card-body row">
+                <h5 class="card-title">{{evento.name}}</h5>
+                <p class="card-text">{{evento.description}}</p>
+                <div>
+                <div class="row">
+                <p class="col fw-bolder">Price: $ {{evento.price}}</p>
+                <a class="col boton text-center" :href="'./details.html?id='+evento._id">details...</a>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid">
+        <div class="row d-flex justify-content-between">
+            <div class="col-6">
+                <a target="_blank" href="https://www.instagram.com/"><img class="minilogo mt-2"
+                        src="https://cdn.discordapp.com/attachments/902380029990805527/985257078224465950/instagram.png"
+                        alt="instagram"></a>
+                <a target="_blank" href="https://es-la.facebook.com/"><img class="minilogo mt-2"
+                        src="https://cdn.discordapp.com/attachments/902380029990805527/985257060025393253/facebook.png"
+                        alt="facebook"></a>
+                <a target="_blank" href="https://web.whatsapp.com/"><img class="minilogo mt-2"
+                        src="https://cdn.discordapp.com/attachments/902380029990805527/985257041478172733/whatsapp.png"
+                        alt="whatsapp"></a>
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-row-reverse">
+                    <h3>Cohort</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
